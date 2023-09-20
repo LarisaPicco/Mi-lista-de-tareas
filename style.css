@@ -1,0 +1,115 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box; /*esta propiedad va a determinar 
+            cómo se va a calcular el alto y ancho de los elementos
+            si incluye el margin y el padding*/
+            font-family: 'Roboto', sans-serif;
+}
+
+body{
+    background: url(imagenes/411478.jpg) no-repeat center center/cover;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 40px 0;
+}
+
+.contenedor{
+    width: 700px;
+    min-height: 500px;
+    background: white;
+    padding: 40px;
+    border: 2px solid black;
+    border-radius: 35px;
+    display: flex;
+    flex-wrap: wrap; /*para que se puedan reajustar los elementos*/
+    flex-direction: column;
+    align-items: center;
+}
+
+h1{
+    font-size: 50px;
+    font-weight: bold;
+}
+
+input{
+    width: 80%;
+    height: 50px;
+    font-size: 25px;
+    margin: 20px;
+    padding: 10px;
+    border: 4px solid #907761;
+    border-radius: 10px;
+    
+}
+
+button{
+    width: 150px;
+    height: 60px;
+    padding: 10px;
+    color: white;
+    background-color: #907761 ;
+    font-size: 22px;
+    border-radius: 20px;
+    border: none;
+    cursor: pointer;
+    user-select: none;
+}
+/* Lista de Tareas */
+
+#listaDeTareas{
+width: 80%;
+margin-top: 20px;
+}
+
+/* Tareas */
+.tarea{
+    width: 100%;
+    min-height: 70px;
+    font-size: 25px;
+    padding: 10px;
+    margin-top: 10px;
+    color: white;
+    background-color: #316064;
+    border: 2px solid black;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    text-align: center;
+}
+
+/*Tarea Completada*/
+
+.tarea.completada{ /*si un elemento tiene las clases tarea y tambien completada*/
+text-decoration: line-through; /*tendra una linea que la tache*/
+background-color: black;
+border: none;
+}
+.tarea p{
+    max-width: 350px;
+}
+
+/*Iconos*/
+
+i{
+    margin: 5px;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.icono-completar{
+    color: #a1cebd;
+
+}
+
+.icono-eliminar{
+    color: white;
+}
+
+.icono-completar:hover, .icono-eliminar:hover{
+    background-color: rgba(255, 255, 255, 0.523);
+}
