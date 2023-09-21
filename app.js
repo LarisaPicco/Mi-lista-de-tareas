@@ -1,6 +1,9 @@
 const input = document.getElementById('ingresarTarea')
 const boton = document.querySelector('button')
 const listaDeTareas = document.getElementById('listaDeTareas')
+let audioTareaNueva = document.getElementById('audioTareaNueva')
+let audioCompletada = document.getElementById('audioCompletada')
+let audioEliminada = document.getElementById('audioEliminada')
 
 function agregarTarea (){
 
@@ -31,7 +34,11 @@ function agregarTarea (){
        iconos.append(completar, eliminar);
 
        //Agregar tarea a la lista
-       listaDeTareas.appendChild(tareaNueva)
+       listaDeTareas.appendChild(tareaNueva);
+
+       /*Reproducir audio*/
+       audioTareaNueva.play();
+
      }  else{  //else en el caso en el que el valor value ingresado por el usuario esté vacío
         alert('Por favor ingresa una tarea'); //para alertar al usuario que ingrese una tarea
 
@@ -46,6 +53,8 @@ function completarTarea(e){ //esta funcion tiene como parametro un objeto de eve
                                     //este otro parentNode es el padre del padre contenedor de los iconos
     tarea.classList.toggle('completada')
 
+    audioCompletada.play();
+
 }
 
 function eliminarTarea(e){
@@ -54,6 +63,7 @@ function eliminarTarea(e){
               //padre parentNode que es el contenedor de los iconos, y luego el padre del padre,
               // el último parentNode que es la tarea
         tarea.remove(); //eliminará la tarea del DOM
+        audioEliminada.play();
      }
 
 boton.addEventListener('click', agregarTarea);
